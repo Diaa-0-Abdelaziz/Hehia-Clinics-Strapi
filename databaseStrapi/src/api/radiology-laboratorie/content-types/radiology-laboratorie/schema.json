@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "radiology_laboratories",
+  "info": {
+    "singularName": "radiology-laboratorie",
+    "pluralName": "radiology-laboratories",
+    "displayName": "Radiology laboratorie",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "LabName": {
+      "type": "string",
+      "required": true
+    },
+    "doctorName": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "location": {
+      "type": "text",
+      "required": true
+    },
+    "locationURL": {
+      "type": "text",
+      "required": true
+    },
+    "phone1": {
+      "type": "string"
+    },
+    "phone2": {
+      "type": "string"
+    },
+    "labDescription": {
+      "type": "text"
+    }
+  }
+}

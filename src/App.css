@@ -1,0 +1,470 @@
+html
+{
+    scroll-behavior: smooth;
+    scroll-padding-top: 72px;
+}
+:root
+{
+    --main-color:#1e1e1e;
+    --second-color:white;
+    --body-backgroundcolor:#f5f5f5;
+    --p-color:#4e4e4e;
+    --third-color:#007aff;
+}
+::selection
+{
+    background-color: var(--third-color);
+    color: var(--second-color);
+}
+::-webkit-scrollbar
+{
+    width: 10px;
+    background-color:var(--main-color);
+
+}
+::-webkit-scrollbar-thumb
+{
+    background-color: var(--third-color);
+    border-radius: 15px;
+}
+h1
+{
+    color: var(--second-color) !important;
+}
+h2
+{
+ position: relative;
+ width: fit-content;
+ font-weight: bolder;
+}
+h2::after
+{
+    position: absolute;
+    content:"";
+    width: 100%;
+    height: 5px;
+    background-color: var(--third-color);
+    bottom: -5px;
+    right: 0;
+}
+h3 
+{
+    background: var(--main-color);
+    width: fit-content;
+    padding: 8px 10px;
+    color: var(--second-color) !important;
+    position: relative;
+}
+h3::after
+{
+    position: absolute;
+    content: "";
+    top: 0;
+    right: -7px;
+    height: 100%;
+    width: 7px;
+    background-color: var(--third-color);
+}
+
+/* ********start header********** */
+header
+{
+    background-image:linear-gradient(#4e4e4eb3, #4e4e4eb3), url("./images/note-5224331_1920.jpg");
+    background-position: center;
+    background-size: cover;
+}
+ .content 
+{
+   background-color: var(--main-color);
+
+}
+ nav .brand 
+{
+    font-size: 1.75rem;
+    text-decoration: none;
+    color: var(--third-color);
+}
+nav .brand:hover
+{
+    color: var(--third-color);
+}
+ nav button.navbar-toggler
+{
+    color: var(--second-color);
+    font-size: 30px;
+}
+ nav .nav-item .nav-link
+{
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: var(--second-color);
+}
+
+nav .nav-item .nav-link.active
+{
+  color: var(--third-color);
+}
+ .write-words
+{
+    position: relative;
+    color: var(--second-color);
+}
+ .write-words::before 
+{
+    content: "نتمنى لكم دوام الصحة والعافية|";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-name: changeWord;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+@keyframes changeWord
+{
+    1.44927536231884%{content: "نتمنى لكم دوام الصحة والعافية|";}
+    2.89855072463768%{content: "نتمنى لكم دوام الصحة والعافي|";}
+    4.34782608695652%{content: "نتمنى لكم دوام الصحة والعاف|";}
+    5.79710144927536%{content: "نتمنى لكم دوام الصحة والعا|";}
+    7.2463768115942%{content: "نتمنى لكم دوام الصحة والع|";}
+    8.69565217391304%{content: "نتمنى لكم دوام الصحة وال|";}
+    10.1449275362319%{content: "نتمنى لكم دوام الصحة وا|";}
+    11.5942028985507%{content: "نتمنى لكم دوام الصحة و|";}
+    13.0434782608696%{content: "نتمنى لكم دوام الصحة |";}
+    14.4927536231884%{content: "نتمنى لكم دوام الصحة|";}
+    15.9420289855072%{content: "نتمنى لكم دوام الصح|";}
+    17.3913043478261%{content: "نتمنى لكم دوام الص|";}
+    18.8405797101449%{content: "نتمنى لكم دوام ال|";}
+    20.2898550724638%{content: "نتمنى لكم دوام ا|";}
+    21.7391304347826%{content: "نتمنى لكم دوام |";}
+    23.1884057971014%{content: "نتمنى لكم دوام|";}
+    24.6376811594203%{content: "نتمنى لكم دوا|";}
+    26.0869565217391%{content: "نتمنى لكم دو|";}
+    27.536231884058%{content: "نتمنى لكم د|";}
+    28.9855072463768%{content: "نتمنى لكم |";}
+    30.4347826086956%{content: "نتمنى لكم ا|";}
+    31.8840579710145%{content: "نتمنى لكم ال|";}
+    33.3333333333333%{content: "نتمنى لكم الش|";}
+    34.7826086956522%{content: "نتمنى لكم الشف|";}
+    36.231884057971%{content: "نتمنى لكم الشفا|";}
+    37.6811594202899%{content: "نتمنى لكم الشفاء|";}
+    39.1304347826087%{content: "نتمنى لكم الشفاء |";}
+    40.5797101449275%{content: "نتمنى لكم الشفاء ا|";}
+    42.0289855072464%{content: "نتمنى لكم الشفاء ال|";}
+    43.4782608695652%{content: "نتمنى لكم الشفاء العا|";}
+    44.9275362318841%{content: "نتمنى لكم الشفاء العاج|";}
+    46.3768115942029%{content: "نتمنى لكم الشفاء العاجل|";}
+    47.8260869565218%{content: "نتمنى لكم الشفاء العاجل|";}
+    49.2753623188406%{content: "نتمنى لكم الشفاء العاجل|";}
+    50.7246376811594%{content: "نتمنى لكم الشفاء العاجل|";}
+    52.1739130434783%{content: "نتمنى لكم الشفاء العاج|";}
+    53.6231884057971%{content: "نتمنى لكم الشفاء العا|";}
+    55.072463768116%{content: "نتمنى لكم الشفاء ال|";}
+    56.5217391304348%{content: "نتمنى لكم الشفاء ا|";}
+    57.9710144927537%{content: "نتمنى لكم الشفاء |";}
+    59.4202898550725%{content: "نتمنى لكم الشفاء|";}
+    60.8695652173914%{content: "نتمنى لكم الشفا|";}
+    62.3188405797102%{content: "نتمنى لكم الشف|";}
+    63.768115942029%{content: "نتمنى لكم الش|";}
+    65.2173913043479%{content: "نتمنى لكم ال|";}
+    66.6666666666667%{content: "نتمنى لكم ا|";}
+    68.1159420289856%{content: "نتمنى لكم |";}
+    69.5652173913044%{content: "نتمنى لكم د|";}
+    71.0144927536232%{content: "نتمنى لكم دو|";}
+    72.4637681159421%{content: "نتمنى لكم دوا|";}
+    73.9130434782609%{content: "نتمنى لكم دوام|";}
+    75.3623188405798%{content: "نتمنى لكم دوام |";}
+    76.8115942028986%{content: "نتمنى لكم دوام ا|";}
+    78.2608695652175%{content: "نتمنى لكم دوام ال|";}
+    79.7101449275363%{content: "نتمنى لكم دوام الص|";}
+    81.1594202898552%{content: "نتمنى لكم دوام الصح|";}
+    82.608695652174%{content: "نتمنى لكم دوام الصحة|";}
+    84.0579710144928%{content: "نتمنى لكم دوام الصحة |";}
+    85.5072463768117%{content: "نتمنى لكم دوام الصحة و|";}
+    86.9565217391305%{content: "نتمنى لكم دوام الصحة وا|";}
+    88.4057971014494%{content: "نتمنى لكم دوام الصحة وال|";}
+    89.8550724637682%{content: "نتمنى لكم دوام الصحة والع|";}
+    91.3043478260871%{content: "نتمنى لكم دوام الصحة والعا|";}
+    92.7536231884059%{content: "نتمنى لكم دوام الصحة والعاف|";}
+    94.2028985507247%{content: "نتمنى لكم دوام الصحة والعافي|"};
+    95.6521739130436%{content: "نتمنى لكم دوام الصحة والعافية|"};  
+    97.1014492753624%{content: "نتمنى لكم دوام الصحة والعافية|"};  
+    98.5507246376813%{content: "نتمنى لكم دوام الصحة والعافية|"};  
+    100%{content: "نتمنى لكم دوام الصحة والعافية|"};  
+}
+.go-to-clinic-section
+{
+    width: 30px;
+    height: 50px;
+    border: 4px solid var(--second-color);
+    position: absolute;
+    cursor: pointer;
+}
+.go-to-clinic-section::before
+{
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background-color: var(--second-color);
+    opacity: 1;
+    animation-name: upDown;
+    animation-iteration-count: infinite;
+   animation-duration: 1.5s;
+}
+@keyframes upDown{
+    0%{top: 5px;}
+    50%{top: 20px;}
+    100%{top:20px; opacity: 0;}
+}
+/* ********************************** */
+.existing_specializations
+{
+    background-image: linear-gradient(#007bff6a, #007bff6a), url(./images/background-1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+.existing_specializations .container 
+{
+    margin-top: 50px;
+}
+.existing_specializations article
+{
+    background-color: var(--second-color);
+    overflow: hidden;
+    border-radius: 5px;
+    text-align: center;
+}
+.existing_specializations article img 
+{
+    height: 205px;
+    transition: .5s;
+}
+.existing_specializations article:hover img 
+{
+    transform: scale(1.2);
+}
+.existing_specializations article .badge
+{
+    background-color: var(--third-color);
+    transform: translateX(-100%);
+}
+/* *********************************** */
+.main-caused article p span
+{
+    color: var(--third-color);
+}
+.main-caused article p a 
+{
+    background-color: var(--third-color);
+    color: var(--second-color);
+    cursor: pointer;
+}
+.card
+{
+    cursor: pointer;
+}
+
+/* *********doctors carousel*********** */
+
+.doctors .carousel-inner .carousel-item img 
+{
+    width: 150px;
+    height: 150px;
+}
+
+.doctors
+{
+    background-image: linear-gradient(#007bff6a, #007bff6a), url("./images/Downloader.la-62b5e0eb58e93.jpg");
+    background-size: cover;
+}
+
+.plan ol li a 
+{
+    background-color: var(--third-color);
+    color: var(--second-color);
+    cursor: pointer;
+}
+
+/* *********************** */
+.Our_vision ol li span
+{
+    background-color: var(--third-color);
+    color: var(--second-color);
+}
+/* ******contact us********** */
+.contact ul li a 
+{
+    color: var(--third-color);
+
+}
+/* ************footer************ */
+footer
+{
+    background-color: var(--main-color);
+}
+footer .container
+{
+    width: fit-content;
+    overflow: hidden;
+}
+
+footer h4, 
+footer p 
+{
+    color: var(--second-color);
+}
+footer p 
+{
+    font-size: .8rem;
+}
+footer p span 
+{
+    color: var(--third-color);
+}
+
+/* *top* */
+footer .container div:nth-child(1){
+    width: 100%;
+    height: 2px;
+    top: 0;
+    left: -100%;
+    background: linear-gradient(to right,transparent,var(--third-color));
+    animation: animate1 3s linear infinite;
+  }
+/* *right* */
+  footer .container div:nth-child(2){
+    width: 2px;
+    height: 100%;
+    top: -100%;
+    right: 0;
+    background: linear-gradient(to bottom,transparent,var(--third-color));
+    animation: animate2 3s linear infinite;
+    animation-delay: 0.75s;
+  }
+  /* *bottom* */
+  footer .container div:nth-child(3){
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    right: -100%;
+    background: linear-gradient(to left,transparent,var(--third-color));
+    animation: animate3 3s linear infinite;
+    animation-delay: 1.5s;
+  }
+  /* *left* */
+  footer .container div:nth-child(4){
+    width: 2px;
+    height: 100%;
+    bottom: -100%;
+    left: 0;
+    background: linear-gradient(to top,transparent,var(--third-color));
+    animation: animate4 3s linear infinite;
+    animation-delay: 2.25s;
+  }
+  /* *top* */
+  @keyframes animate1 {
+    0% {
+      left: -100%;
+    }
+    50%,100% {
+      left: 100%;
+    }
+  }
+  /* *right* */
+  @keyframes animate2 {
+    0% {
+      top: -100%;
+    }
+    50%,100% {
+      top: 100%;
+    }
+  }
+  /* *bottom* */
+  @keyframes animate3 {
+    0% {
+      right: -100%;
+    }
+    50%,100% {
+      right: 100%;
+    }
+  }
+  /* *left* */
+  @keyframes animate4 {
+    0% {
+      bottom: -100%;
+    }
+    50%,100% {
+      bottom: 100%;
+    }
+  }
+
+/* ***clinics page*** */
+.clinics a 
+{
+    width: fit-content;
+    padding: 0;
+    margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* *****modal*** */
+.doctor-details
+{
+    background-color: #1e1e1ead;
+}
+.modal-body p.badge
+{
+    background-color: var(--third-color);
+    color: var(--second-color);
+}
+.modal-body p,
+.modal-body p a
+{
+    color: var(--main-color);
+}
+.modal-body p i 
+{
+    color: var(--third-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
