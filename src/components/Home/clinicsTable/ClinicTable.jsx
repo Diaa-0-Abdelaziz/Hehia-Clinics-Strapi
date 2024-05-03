@@ -13,6 +13,7 @@ export default function ClinicsTable() {
     <section className="pt-5">
     <div className="container">
     <h3>العيادات التي تم حصرها إلى الآن</h3>
+    {clinicData?.data ? 
     <table className="table table-dark">
             <thead>
               <tr>
@@ -22,7 +23,6 @@ export default function ClinicsTable() {
             </thead>
             <tbody>
     {clinicData?.data?.map((clinic) => (
-        // console.log(clinic?.attributes?.doctorName?.data.length)
               <tr  key={clinic.id}>
                 <td>{clinic.attributes.clinicName}</td>
                 <td>{clinic?.attributes?.doctorName?.data.length}</td>
@@ -30,6 +30,11 @@ export default function ClinicsTable() {
             ))}
             </tbody>
           </table>
+          : 
+          <div className='  d-flex justify-content-center align-items-center'>
+           <p className=' fs-2 p-2 rounded-2 bg-danger text-bg-danger'>Sorry!!!!! No Data To Show Here </p> 
+          </div>
+          }
     </div>
  
     </section>

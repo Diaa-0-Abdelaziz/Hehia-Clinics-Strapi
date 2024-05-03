@@ -886,10 +886,11 @@ export interface ApiMedicalAnalysisLaboratoryMedicalAnalysisLaboratory
     doctorName: Attribute.String & Attribute.Required;
     description: Attribute.Text & Attribute.Required;
     location: Attribute.Text & Attribute.Required;
-    loactionURL: Attribute.Text & Attribute.Required;
+    locationURL: Attribute.Text & Attribute.Required;
     phone1: Attribute.String;
     phone2: Attribute.String;
     labDescription: Attribute.Text;
+    date_Of_Work: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

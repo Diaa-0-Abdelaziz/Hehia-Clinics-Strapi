@@ -5,29 +5,29 @@ import { getClinicsDetails } from '../../slices/clinicSlice'
 import { FaWindowClose } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa6";
 import { FaLocationDot } from "react-icons/fa6";
-
+import { Triangle } from 'react-loader-spinner'
 export default function ClinicsDetails() {
   const [selectedDoctor, setSelectedDoctor] = useState(null);
   const {name} = useParams()
-  // console.log(name)
-  const {clinicDataDetails} = useSelector((state) => state.clinics)
+  const {clinicDataDetails, isLoading} = useSelector((state) => state.clinics)
   const dispatch = useDispatch();
   useEffect(()=>{
     dispatch(getClinicsDetails(name))
   }, [dispatch, name])
   const response = clinicDataDetails?.data?.attributes?.doctorName?.data
-  console.log(response)
-
   const handleCardClick = (doctor) => {
-    setSelectedDoctor(doctor); // تحديث الحالة ليتم اختيار الطبيب
+    setSelectedDoctor(doctor);
   };
 
   const handleCloseModal = () => {
-    setSelectedDoctor(null); // إغلاق النافذة عند النقر على زر إغلاق
+    setSelectedDoctor(null);
   };
   return (
+    <>
+       {!isLoading? 
     <section className="mt-5 pt-3 vh-100">
         <div className="container mt-5">
+        {response !== undefined && response.length > 0 ?
             <div className="row gy-4">
                 {response?.map((doctor) => (
                    <div className="col-lg-3 col-md-4 col-sm-6" key={doctor.id}>
@@ -40,8 +40,13 @@ export default function ClinicsDetails() {
                 ))}
   
             </div>
+            : 
+            <div className=' vh-100 d-flex justify-content-center align-items-center'>
+             <p className=' fs-2 p-2 rounded-2 bg-danger text-bg-danger'>Sorry!!!!! No Data To Show Here </p> 
+            </div>
+            }
         </div>
-
+        
         {selectedDoctor && (
         <div className=" doctor-details  position-fixed top-0 start-0 bottom-0 end-0 d-flex justify-content-center align-items-center">
            <div className="card text-center bg-dark text-white">
@@ -62,7 +67,7 @@ export default function ClinicsDetails() {
                                   {selectedDoctor.attributes.phone2? 
                                   <p className="fs-6 fw-bold"><span className="ms-2 fs-5"><FaPhone/></span><a className="text-decoration-none text-primary fs-4" href={`tel:+2${selectedDoctor.attributes.phone2}`}>{selectedDoctor.attributes.phone2}</a></p>
                                   : ''}
-                                  <p className="fs-6 fw-bold"><span className="ms-2 fs-5"> <FaLocationDot/> </span> <a href={selectedDoctor.attributes.locationURL}>{selectedDoctor.attributes.location}</a> </p>
+                                  <p className="fs-6 fw-bold"><span className="ms-2 fs-5"> <FaLocationDot/> </span> <a href={selectedDoctor.attributes.locationURL}>{selectedDoctor.attributes.location}</a></p>
                                 
                                 </div>
                              
@@ -74,5 +79,16 @@ export default function ClinicsDetails() {
         </div>
       )}
     </section>
+    : <div className=' vh-100 d-flex justify-content-center align-items-center'> 
+     <Triangle
+          visible={true}
+          height="80"
+          width="80"
+          color="var(--main-color)"
+          ariaLabel="triangle-loading"
+          wrapperStyle={{}}
+          wrapperClass=""/>
+    </div> }
+    </>
   )
 }

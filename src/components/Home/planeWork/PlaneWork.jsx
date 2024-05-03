@@ -14,7 +14,7 @@ export default function PlaneWork() {
       <li className="fs-4">إذا كنت قد سجلت الجيميل الخاص بك فى الموقع فسوف يتم إرسال كافة التحديثات بشكل فورى. <button className="text-decoration-none btn btn-primary" data-bs-toggle="modal" data-bs-target="#registration">إضغط هنا لتسجيل الجيميل </button> <i className="fa-solid fa-xmark text-danger"></i></li>
     </ol>
     </div>
-    <div className="modal fade" id="registration" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div className="modal fade" id="registration" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div className="modal-dialog modal-lg modal-dialog-centered">
         <div className="modal-content">
           <div className="modal-header">

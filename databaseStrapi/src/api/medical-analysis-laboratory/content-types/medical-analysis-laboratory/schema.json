@@ -28,7 +28,7 @@
       "type": "text",
       "required": true
     },
-    "loactionURL": {
+    "locationURL": {
       "type": "text",
       "required": true
     },
@@ -40,6 +40,10 @@
     },
     "labDescription": {
       "type": "text"
+    },
+    "date_Of_Work": {
+      "type": "string",
+      "required": true
     }
   }
 }
