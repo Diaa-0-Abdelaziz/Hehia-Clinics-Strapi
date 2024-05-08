@@ -7,7 +7,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import { Triangle } from 'react-loader-spinner'
 export default function MedicalAnalysisLaboratory() {
     const [selectedMedical, setSelectedMedical] = useState(null);
-  const {MedicalLabData, isLoading, errors} = useSelector((state) => state.medicalLab)
+  const {MedicalLabData, isLoading} = useSelector((state) => state.medicalLab)
   const dispatch = useDispatch();
   useEffect(()=>{
     dispatch(getAllMedicalLabs())

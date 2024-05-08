@@ -16,6 +16,7 @@ const getAllClinics = createAsyncThunk("get-all-clinics", async ()=>{
           return error
     }
 })
+
 const getClinicsDetails = createAsyncThunk("get-all-clinics-details", async (clinicName)=>{
     try{
         const data = await axios.get(`${BaseURL}clinics/${clinicName}?populate=*`)

@@ -1,0 +1,68 @@
+.content {
+  min-height: 670px;
+}
+.content .list-group {
+  border-radius: 20px;
+}
+.content .list-group .list-group-item {
+  font-size: 20px;
+  color: #3C1D4E;
+}
+.content .list-group .list-group-item p, .content .list-group .list-group-item label, .content .list-group .list-group-item input {
+  cursor: pointer;
+}
+.content .list-group .list-group-item i {
+  color: #E6F6FF;
+  font-size: 50px;
+}
+.content .nav-pills {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.062);
+  background-color: #E6F6FF;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.content .nav-pills li {
+  width: 100%;
+  text-align: center;
+  color: #3C1D4E;
+  padding: 22px 0;
+  cursor: pointer;
+}
+.content .nav-pills div {
+  border: none;
+  width: 100%;
+  background-color: #3C1D4E;
+  border-color: white !important;
+}
+.content .nav-pills .active {
+  background-color: white;
+}
+.content .tab-content {
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.04);
+  padding: 0;
+  margin-top: 0px;
+}
+.content .tab-content .list-group {
+  border-radius: 0;
+}
+.content .tab-content label {
+  color: #ababab;
+}
+.content .tab-content .Back_To_Home {
+  text-decoration: none;
+  background-color: #3C1D4E;
+  width: 250px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  padding: 5px 0;
+}
+@media screen and (max-width: 992px) {
+  .content .tableAccount {
+    margin-top: 20px;
+  }
+}/*# sourceMappingURL=content.css.map */

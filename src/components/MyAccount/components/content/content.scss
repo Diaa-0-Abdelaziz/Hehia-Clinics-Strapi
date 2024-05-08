@@ -1,0 +1,103 @@
+$forth:#3D1F50;
+$fifth:#E6F6FF;
+$second:#000000;
+$third:#000000;
+$main:#000000;
+.content
+{
+    min-height: 670px;
+    .list-group
+    {
+        border-radius: 20px;
+        // box-shadow:  0 5px 10px rgba(0, 0, 0, 0.164);
+       .list-group-item
+       {
+        font-size: 20px;
+        color: #3C1D4E;
+        p,label,input
+        {
+        cursor: pointer;
+        }
+        i 
+        {
+            color: #E6F6FF;
+            // margin-bottom: 10px;
+            font-size: 50px;
+
+        }
+       } 
+    }
+    .nav-pills
+    {
+        box-shadow:  0 0 5px rgba(0, 0, 0, 0.062);
+        background-color: #E6F6FF;
+        border-top-left-radius:60px ;
+        border-top-right-radius:60px ;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        li 
+        {
+            // background-color: #3C1D4E;
+            width: 100%;
+            text-align: center;
+            color: #3C1D4E;
+            padding: 22px 0;
+            cursor: pointer;
+        }
+        // overflow: hidden;
+        // width: 300px;
+        // background-color: #3C1D4E;
+        div 
+        {
+        //    40px;
+            border: none;
+            width: 100%;
+            // background-color: #3C1D4E;
+            background-color: #3C1D4E;
+            // background-color: transparent;
+            border-color: white !important;
+        }
+        .active
+        {
+            background-color: white;
+        }
+    }
+    .tab-content
+    {
+        box-shadow:  0 5px 7px rgba(0, 0, 0, 0.04);
+        padding: 0;
+        margin-top: 0px;
+        // background-color: aqua;
+        // width: 100%;
+        .list-group
+        {
+            border-radius: 0;
+        }
+        label
+        {
+            color: #ababab;
+        }
+     
+           .Back_To_Home
+           {
+               text-decoration: none;
+               background-color: #3C1D4E;
+               width: 250px;
+               color: white;
+               text-align: center;
+               font-weight: bold;
+               padding: 5px 0;
+           }
+        
+    }
+
+    @media screen and (max-width:992px) {
+     .tableAccount
+     {
+        margin-top: 20px;
+     }
+        
+    }
+}

@@ -695,7 +695,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
   options: {
     draftAndPublish: false;
-    timestamps: true;
   };
   attributes: {
     username: Attribute.String &
@@ -723,6 +722,12 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'plugin::users-permissions.user',
       'manyToOne',
       'plugin::users-permissions.role'
+    >;
+    phone: Attribute.String & Attribute.Required;
+    medicens_dates: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::medicens-date.medicens-date'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -909,6 +914,39 @@ export interface ApiMedicalAnalysisLaboratoryMedicalAnalysisLaboratory
   };
 }
 
+export interface ApiMedicensDateMedicensDate extends Schema.CollectionType {
+  collectionName: 'medicens_dates';
+  info: {
+    singularName: 'medicens-date';
+    pluralName: 'medicens-dates';
+    displayName: 'medicens-date';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    medicen: Attribute.String & Attribute.Required;
+    time: Attribute.String & Attribute.Required;
+    user_id: Attribute.Text & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::medicens-date.medicens-date',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::medicens-date.medicens-date',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiRadiologyLaboratorieRadiologyLaboratorie
   extends Schema.CollectionType {
   collectionName: 'radiology_laboratories';
@@ -969,6 +1007,7 @@ declare module '@strapi/types' {
       'api::clinic.clinic': ApiClinicClinic;
       'api::doctor.doctor': ApiDoctorDoctor;
       'api::medical-analysis-laboratory.medical-analysis-laboratory': ApiMedicalAnalysisLaboratoryMedicalAnalysisLaboratory;
+      'api::medicens-date.medicens-date': ApiMedicensDateMedicensDate;
       'api::radiology-laboratorie.radiology-laboratorie': ApiRadiologyLaboratorieRadiologyLaboratorie;
     }
   }

@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "medicens_dates",
+  "info": {
+    "singularName": "medicens-date",
+    "pluralName": "medicens-dates",
+    "displayName": "medicens-date",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "medicen": {
+      "type": "string",
+      "required": true
+    },
+    "time": {
+      "type": "string",
+      "required": true
+    },
+    "user_id": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

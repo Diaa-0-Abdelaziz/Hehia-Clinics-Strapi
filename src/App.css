@@ -73,7 +73,7 @@ header
     background-position: center;
     background-size: cover;
 }
- .content 
+ /* .content 
 {
    background-color: var(--main-color);
 
@@ -100,14 +100,114 @@ nav .brand:hover
     color: var(--second-color);
     text-decoration: none;
 }
-.active
+.active_link
 {
     color: var(--third-color) !important;
 }
 nav .nav-item .nav-link.active
 {
   color: var(--third-color);
-}
+} */
+
+
+
+
+.navbar {
+    background-color: #151515;
+    z-index: 999999;
+  }
+  .navbar .icon a
+  {
+    text-decoration: none;
+    color: var(--third-color);
+  }
+  .navbar .menu,
+  .navbar .close {
+    color: var(--third-color);
+    cursor: pointer;
+  }
+  .navbar ul li .active_link {
+    color: var(--third-color);
+  }
+  .navbar ul li a {
+    margin: 0 10px;
+    padding: 2px 4px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: var(--body-backgroundcolor);
+    text-decoration: none;
+  }
+  .navbar .carterth span {
+    cursor: pointer;
+  }
+  @media screen and (max-width:1206px) {
+    .navbar .link {
+      position: absolute;
+      background: var(--main-color);
+      padding-bottom: 15px;
+      width: 90%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      top: -300px;
+      transition: 0.3s;
+      border-radius: 10px;
+      box-shadow: 0px 0px 7px rgb(255, 255, 255);
+    }
+    .navbar .toggle {
+      top: 20px;
+    }
+    .navbar ul {
+      text-align: center;
+    }
+    .navbar ul li {
+      margin: 10px 0;
+    }
+  }
+  @media screen and (min-width: 1206px) {
+    .navbar .navbar {
+      display: flex;
+    }
+    .navbar .link {
+      position: static;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 80%;
+    }
+    .navbar .menu, .navbar .close {
+      display: none;
+    }
+    .navbar ul {
+      display: flex;
+    }
+    .navbar ul li {
+      margin-top: 10px;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ****************************** */
  .write-words
 {
     position: relative;

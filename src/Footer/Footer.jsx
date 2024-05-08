@@ -2,7 +2,7 @@ import React from 'react'
 export default function Footer() {
   return (
    <>
-<footer className=" p-1">
+<footer className="p-1 mt-5">
       <div className="container text-center my-3 position-relative">
         <div className="position-absolute"></div>
         <div className="position-absolute"></div>

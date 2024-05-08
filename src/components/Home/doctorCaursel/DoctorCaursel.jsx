@@ -3,7 +3,7 @@ import photo from "../../../images/doctor.jpg"
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllDoctors } from '../../../slices/doctorSlice';
 export default function DoctorCaursel() {
-   const{doctorData, isLoading, errors} = useSelector((state)=> state.doctors)
+   const{doctorData} = useSelector((state)=> state.doctors)
    const dispatch = useDispatch();
    useEffect(()=>{
     dispatch(getAllDoctors())

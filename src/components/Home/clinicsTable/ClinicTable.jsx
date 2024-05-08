@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getAllClinics } from '../../../slices/clinicSlice';
 
 export default function ClinicsTable() {
-  const{clinicData, isLoading, errors} = useSelector((state)=> state.clinics)
+  const{clinicData} = useSelector((state)=> state.clinics)
   const dispatch = useDispatch();
   useEffect(()=>{
     dispatch(getAllClinics())

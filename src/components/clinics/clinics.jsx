@@ -4,7 +4,7 @@ import { getAllClinics } from '../../slices/clinicSlice';
 import { Link } from 'react-router-dom';
 import { Triangle } from 'react-loader-spinner'
 export default function Clinics() {
-  const{clinicData, isLoading, errors} = useSelector((state)=> state.clinics)
+  const{clinicData, isLoading} = useSelector((state)=> state.clinics)
   const dispatch = useDispatch();
   useEffect(()=>{
     dispatch(getAllClinics())

@@ -7,7 +7,7 @@ import { getAllRadiologyLabs } from '../../slices/RadiologySlice';
 import { Triangle } from 'react-loader-spinner'
 export default function RadiologyLaboratorie() {
     const [selectedMedical, setSelectedMedical] = useState(null);
-  const {RadiologyLabData, isLoading, errors} = useSelector((state) => state.RadiologyLab)
+  const {RadiologyLabData, isLoading} = useSelector((state) => state.RadiologyLab)
   const dispatch = useDispatch();
   useEffect(()=>{
     dispatch(getAllRadiologyLabs())
