@@ -1,6 +1,8 @@
 # Hehia-Clinics-website
 It is a website to display clinics in the city and is divided into sections
 It also displays medical analysis laboratories and radiology laboratories
+
+
 ![Screenshot (263)](https://github.com/Diaa-0-Abdelaziz/Hehia-Clinics-Strapi/assets/152159835/e8756376-09dd-4142-886f-572e23acd429)
 ![screencapture-localhost-3000-Clinics-2024-05-10-08_09_33](https://github.com/Diaa-0-Abdelaziz/Hehia-Clinics-Strapi/assets/152159835/398c614a-bb47-4466-901f-3d5c2a294d4d)
 ## These are some doctors in a specific specialty
@@ -23,6 +25,8 @@ It also displays medical analysis laboratories and radiology laboratories
 ## To run app
 1- open folder in V.S code
 2- write  npm start  
+
+
 ![Screenshot (278)](https://github.com/Diaa-0-Abdelaziz/Hehia-Clinics-Strapi/assets/152159835/ffe7cc7e-8266-45a4-a3f8-9dd4fc359ea7)
 ## To run strapi
 1- go to strapi file
