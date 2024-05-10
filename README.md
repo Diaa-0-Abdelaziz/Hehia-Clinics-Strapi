@@ -29,6 +29,8 @@ It also displays medical analysis laboratories and radiology laboratories
 PS C:\Users\SABY\Desktop\clinics> cd databaseStrapi
 2- run strapi
 C:\Users\SABY\Desktop\clinics\databaseStrapi> npm run develop 
+
+
 ![Screenshot (277)](https://github.com/Diaa-0-Abdelaziz/Hehia-Clinics-Strapi/assets/152159835/06b1aa0a-0dd6-4042-9a96-3c29c95bfbe5)
 
 
