@@ -7,14 +7,10 @@ import Register from '../Authentication/Register';
 import { useSelector } from 'react-redux';
 export default function Navbar() {
   const jwt = useSelector(state => state.auth.jwt);
-  // const user = useSelector(state => state.auth.userData);
-  // console.log(jwt)
-  // console.log(user)
+ 
   let location = useLocation()
   const [open, setOpen] = useState("link")
-  // const [newPassword, setNewPassword] = useState(false)
-  // const [writeCode, setWriteCode] = useState(false)
-  // const [ForgetPassword, setForgetPassword] = useState(false)
+ 
   const [register, setRegister] = useState(false)
   const [logIN, setLogIN] = useState(false)
   function openWindow(){
@@ -51,51 +47,27 @@ export default function Navbar() {
       linkName:"تواصل معنا",
       pathName: "/Contact-Us"
     },
-    {
-      linkName:"عنا",
-      pathName: "/"
-    },
    ]
-  // function GoToLoginFunc (){
-  //   setLogIN(true)
-  //   setNewPassword(false)
-  // }
-  // function ForgetPasswordSetting (){
-  //   setForgetPassword(true)
-  //   setLogIN(false)
-  // }
-  // function writeNewPASSWORDSetting (){
-  //   setNewPassword(true)
-  //   setWriteCode(false)
-  // }
-  // function writeCodeSetting (){
-  //   setForgetPassword(false)
-  //   setWriteCode(true)
-  // }
+
 
 
 
   useEffect(() => {
-    // Add event listener to handle clicks on the document
     document.body.addEventListener('click', handleBodyClick);
 
-    // Cleanup function to remove the event listener when component unmounts
     return () => {
       document.body.removeEventListener('click', handleBodyClick);
     };
   }, []);
 
   const handleBodyClick = (event) => {
-    // Check if the clicked element or any of its ancestors has class "elected-option"
     if (!event.target.closest('.menu')) {
       setOpen("link")
     }
   };
   return (
     <>
-  {/* <header id="home" className="d-flex justify-content-center align-items-center position-relative min-vh-100"> */}
-            <div className="navbar py-1 px-5">
-                
+            <div className="navbar py-1 px-5">    
             <div className='icon'>
             <h4><Link className="brand fw-bolder" to="/">عيادات مدينة ههيا</Link></h4>
             </div>
@@ -130,14 +102,11 @@ export default function Navbar() {
               
             </div>
             
-            {/* <Link to="#main-caused" className="go-to-clinic-section position-absolute rounded-pill bottom-0 mb-4"></Link> */}
-    {/* </header> */}
+
    
     {logIN? <Login toggleVisibility={() => setLogIN(false)} /> : ''}
         {register? <Register toggleVisibility={() => setRegister(false)}/> :  ''}
-        {/* {ForgetPassword? <ForgotPassword toggleVisibility={() => setForgetPassword(false)} writeCode={writeCodeSetting}/> :  ''}
-         {writeCode? <EnterCode toggleVisibility={() => setWriteCode(false)} writeNewPASSWORD={writeNewPASSWORDSetting}/> : ''}
-         {newPassword? <ResetPassword toggleVisibility={() => setNewPassword(false)} GoToLogin={GoToLoginFunc}/> : ''} */}
+       
     </>
   )
 }

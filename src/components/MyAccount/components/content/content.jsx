@@ -9,20 +9,13 @@ import MedicenForm from '../medicenForm';
 export default function Content() {
   const dispatch = useDispatch();
   let navigate = useNavigate()
-  // const jwt = useSelector(state => state.auth.jwt);
   const user = useSelector(state => state.auth.userData);
-
-  console.log(user)
-
-
   function deleteJWTFromCookies() {
-    // مسح JWT من الكوكيز
     Cookies.remove('jwt');
     Cookies.remove('user');
   
-    // تحديث حالة Redux لتعبر عن عدم المصادقة
-    dispatch(setJWT('')); // تحديث JWT إلى قيمة فارغة
-    dispatch(setUserData({})); // مسح بيانات المستخدم
+    dispatch(setJWT(''));
+    dispatch(setUserData({})); 
     navigate("/")
   }
   return (
@@ -62,21 +55,18 @@ export default function Content() {
                     <label htmlFor="exampleInputPassword1" className="form-label fs-6">الإسم</label>
                     <input type="text" className="form-control bg-white border-0" value={user.username} id="exampleInputPassword1" disabled readOnly/>
                 </div>
-                <p className='m-0 fs-6 mt-3 ms-5'>EDIT</p>
                 </li>
                 <li className="list-group-item d-flex flex-row align-items-center justify-content-between">
                 <div className="mb-3 w-100">
                     <label htmlFor="exampleInputPassword1" className="form-label fs-6">الجيميل</label>
                     <input type="email" className="form-control bg-white w-100 border-0" value={user.email} id="exampleInputPassword1" disabled readOnly/>
                 </div>
-                <p className='m-0 fs-6 mt-3 ms-5'>EDIT</p>
                 </li>
                 <li className="list-group-item d-flex flex-row align-items-center justify-content-between">
                 <div className="mb-3 w-100">
                     <label htmlFor="exampleInputPassword1" className="form-label fs-6">رقم الهاتف</label>
                     <input type="text" className="form-control bg-white border-0" value={user.phone} id="exampleInputPassword1" disabled readOnly/>
                 </div>
-                <p className='m-0 fs-6 mt-3 ms-5'>EDIT</p>
                 </li>
             </ul>
 

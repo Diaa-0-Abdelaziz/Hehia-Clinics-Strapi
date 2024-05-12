@@ -11,7 +11,7 @@ export default function Login({ toggleVisibility, forgotPASSWORD}) {
   const dispatch = useDispatch();
     let mySchema = Yup.object({
           identifier:Yup.string().email("email isn't valid").required('email is required'),
-          password:Yup.string().required('password is required'),
+          password:Yup.string().required('password is required').min(6,'min is 6 char'),
       })
       let formik = useFormik({
         initialValues:{
@@ -24,15 +24,11 @@ export default function Login({ toggleVisibility, forgotPASSWORD}) {
         }
       })
       async function getData(values){
-        console.log(values)
        return axios.post("http://localhost:1337/api/auth/local/", values).then((data)=>{
-        // console.log(data)
         const jwt = data.data.jwt
         const userData = data.data.user
         dispatch(setJWT(jwt));
        dispatch(setUserData(userData));
-        // console.log(jwt)
-        // console.log(data.data.user)
          Cookies.set('jwt', jwt)
          Cookies.set('user', JSON.stringify(userData))
         toast.success("مرحبا بك في عيادات مدينة ههيا")
@@ -40,7 +36,6 @@ export default function Login({ toggleVisibility, forgotPASSWORD}) {
           toggleVisibility();
       }, 2000);
        }).catch((err)=>{
-       console.log(err.response.data.error.message)
        toast.error(err.response.data.error.message);
        })
       }

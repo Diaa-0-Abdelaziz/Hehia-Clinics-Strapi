@@ -13,6 +13,7 @@ import { setJWT, setUserData } from './slices/tokenSlice';
 import Cookies from 'js-cookie';
 import { useEffect } from 'react';
 import MyAccount from './components/MyAccount/MyAccount';
+import ProtectedPath from './components/ProtectedPath/ProtectedPath';
 function App() {
   const dispatch = useDispatch();
 
@@ -42,7 +43,7 @@ function App() {
         {path:'Medical-Analysis-Laboratory', element:<MedicalAnalysisLaboratory/>},
         {path:'Radiology-Laboratorie', element:<RadiologyLaboratorie/>},
         {path:'Contact-Us', element:<ContactUs/>},
-        {path:'MyAccount', element:<MyAccount/>},
+        {path:'MyAccount', element:<ProtectedPath><MyAccount/></ProtectedPath>},
         {path:'clinics/:name', element:<ClinicsDetails/>},
         // {path:'*', element:<Notfound/>}
       ]

@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import axios from 'axios';
 import toast, { Toaster } from "react-hot-toast";
-import { useSelector } from 'react-redux';
+import {useSelector } from 'react-redux';
 export default function MedicenForm() {
+  const [medicenData, setMedicenData] = useState([])
   const user = useSelector(state => state.auth.userData);
   const userId = user.username
     let mySchema = Yup.object({
@@ -17,12 +18,12 @@ export default function MedicenForm() {
         time:"",
       },
       validationSchema:mySchema,
-      onSubmit:(values)=>{
+      onSubmit:(values, { resetForm })=>{
         setData(values)
+        resetForm()
       }
     })
     async function setData(values){
-        console.log(values)
         const dataSend = {
           ...values,
           user_id: userId
@@ -31,11 +32,9 @@ export default function MedicenForm() {
         headers: {
           "Content-Type": "application/json"
       }
-       }).then((data)=>{
-        console.log(data)
-
-        toast.success("ربنا يشفيك يارب")
-      
+       }).then( async (data)=>{
+        await MedicenShow()
+        toast.success("شفاك الله وعافاك")
        }).catch((err)=>{
        console.log(err)
 
@@ -44,21 +43,37 @@ export default function MedicenForm() {
 
 
 
-
-      // async function getData(values){
-      //   console.log(values)
-      //  return axios("http://localhost:1337/api/medicens-dates", {
-      //   headers: {
-      //     "Content-Type": "application/json"
-      // }
-      //  }).then((data)=>{
-      //   console.log(data)
-      //  }).catch((err)=>{
-      //  console.log(err)
-
-      //  })
-      // }
-
+      async function MedicenShow(){
+        try {
+            const allMedicens = await axios.get('http://localhost:1337/api/medicens-dates',{
+            });
+            
+            if(allMedicens){
+           setMedicenData(allMedicens.data)
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    }
+    useEffect(() => {
+        MedicenShow()
+    }, [])
+          
+    const handleMedicenDelete =  async (id) => {
+        try {
+            const allMedicens = await axios.delete('http://localhost:1337/api/medicens-dates/' + id,{
+            });
+            
+            if(allMedicens){
+          //  setMedicenData(allMedicens.data)
+          toast.success("تم حذف هذا الدواء")
+           MedicenShow()
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    }
+          
 
 
   return (
@@ -67,13 +82,14 @@ export default function MedicenForm() {
         position="bottom-center"
         reverseOrder={false}
       />
+      
          <form onSubmit={formik.handleSubmit} className="row mt-2 justify-content-center">
 	  	            <div className="form-group col-md-6">
 	  	            	<input className="form-control  mt-2" type="text" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.medicen} name='medicen' placeholder="أكتب الدواء"/>
 	  	                {formik.touched.medicen && formik.errors.medicen ? <p className='text-danger'>{formik.errors.medicen}</p>: ""}
                     </div>
 					
-					<div className="form-group col-md-4">
+					<div className="form-group col-md-6">
 						<input className="form-control  mt-2" type="time"  onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.time} name='time'/>
                         {formik.touched.time && formik.errors.time ? <p className='text-danger'>{formik.errors.time}</p>: ""}
 					</div>
@@ -82,7 +98,25 @@ export default function MedicenForm() {
 			</form>
 
       <div  className=' table_content'>
-                    
+      <table className="table table-dark mt-3">
+        <thead>
+          <tr>
+            <th scope="col">الدواء</th>
+            <th scope="col">وقت تناوله</th>
+            <th scope="col">حذف</th>
+          </tr>
+        </thead>
+        <tbody>
+          {medicenData?.data?.filter(item => item.attributes.user_id === user.username)?.map((data)=>
+          <tr key={data.id}>
+            <td>{data.attributes.medicen}</td>
+            <td>{data.attributes.time}</td>
+            <td><span className=' text-white fw-bold btn badge bg-danger' onClick={()=>handleMedicenDelete(data.id)}>حذف</span></td>
+          </tr>
+        
+        )}
+        </tbody>
+      </table>
 					</div>
             </>
             

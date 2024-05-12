@@ -12,7 +12,7 @@ export default function Register({ toggleVisibility }) {
           username:Yup.string().required('name is required').min(3,'min is 3 char').max(30, 'max is 30 char') ,
           email:Yup.string().email("email isn't valid").required('email is required'),
           phone:Yup.string().required('Phone number is required'),
-          password:Yup.string().required('password is required'),
+          password:Yup.string().required('password is required').min(6,'min is 6 char'),
           rePassword:Yup.string().required('password is required').oneOf([Yup.ref('password')], 'password not match'),
       })
       let formik = useFormik({
@@ -29,9 +29,7 @@ export default function Register({ toggleVisibility }) {
         }
       })
       async function getData(values){
-        console.log(values)
        return axios.post("http://localhost:1337/api/auth/local/register", values).then((data)=>{
-        console.log(data.data.user)
         const jwt = data.data.jwt
         Cookies.set('jwt', jwt)
         toast.success("تم إنشاء الحساب بنجاح")
@@ -39,7 +37,6 @@ export default function Register({ toggleVisibility }) {
           toggleVisibility();
       }, 2000);
        }).catch((err)=>{
-       console.log(err.response.data.error.message)
        toast.error(err.response.data.error.message);
        })
       }
